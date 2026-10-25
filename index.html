@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maa Kamakhya Enterprises | Multi-Disciplinary Infrastructure & Corporate Group</title>
+    <style>
+        :root {
+            --primary-navy: #0F172A;
+            --accent-orange: #EA580C;
+            --accent-blue: #0284C7;
+            --text-dark: #334155;
+            --bg-light: #F8FAFC;
+            --card-bg: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--primary-navy);
+            color: #FFFFFF;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-orange);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #E2E8F0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-orange);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: #CBD5E1;
+        }
+
+        .cta-btn {
+            background-color: var(--accent-orange);
+            color: #FFFFFF;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #C2410C;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.25rem;
+            color: var(--primary-navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #64748B;
+            margin-bottom: 3rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--accent-orange);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card.mechanical {
+            border-top-color: var(--accent-blue);
+        }
+
+        .service-card.it {
+            border-top-color: #10B981;
+        }
+
+        .service-card.mining {
+            border-top-color: #8B5CF6;
+        }
+
+        .service-card.compliance {
+            border-top-color: #F59E0B;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-navy);
+            margin-bottom: 1rem;
+        }
+
+        .service-card ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .service-card li {
+            padding: 0.4rem 0;
+            border-bottom: 1px solid #F1F5F9;
+            color: #475569;
+            position: relative;
+            padding-left: 1.25rem;
+        }
+
+        .service-card li::before {
+            content: "✓";
+            color: var(--accent-orange);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-navy);
+            color: #94A3B8;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid #1E293B;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="nav-container">
+            <a href="#home" class="logo">Maa Kamakhya <span>Enterprises</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Building Infrastructure, Driving Technology</h1>
+        <p>A multi-sectoral enterprise delivering excellence in Civil Engineering, Heavy Construction, Mechanical Works, IT Infrastructure, Mining, and Corporate Compliance.</p>
+        <a href="#services" class="cta-btn">Explore Our Capability</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2 class="section-title">About Maa Kamakhya Enterprises</h2>
+        <p class="section-subtitle">Excellence across heavy engineering, technology, and corporate management</p>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Maa Kamakhya Enterprises operates as a unified group of companies executing specialized projects across India. Our expertise spans large-scale civil infrastructure development, heavy mechanical fabrications, cutting-edge IT server setup, mining operations, and enterprise-level corporate compliance.</p>
+                <p>With an unwavering commitment to quality, structural integrity, and regulatory compliance, we serve both public sector initiatives and private sector mega-projects.</p>
+            </div>
+            <div class="about-stats" style="background: #E2E8F0; padding: 2rem; border-radius: 8px;">
+                <h3 style="color: var(--primary-navy); margin-bottom: 1rem;">Key Competencies</h3>
+                <ul>
+                    <li>National & State Highway Development</li>
+                    <li>Deep Foundation & Specialized Piling</li>
+                    <li>Industrial Power Plant Construction</li>
+                    <li>Turnkey IT & Server Solutions</li>
+                    <li>Mining & Industrial Earthwork Operations</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <h2 class="section-title">Our Specialized Divisions</h2>
+        <p class="section-subtitle">Comprehensive solutions delivered by sector-specific experts</p>
+
+        <div class="services-grid">
+            
+            <!-- Heavy Civil & Infrastructure -->
+            <div class="service-card">
+                <h3>Heavy Civil & Infrastructure</h3>
+                <ul>
+                    <li>National Highway & Expressways</li>
+                    <li>Flyovers, Bridges & Viaducts</li>
+                    <li>Railway Lines & Structural Works</li>
+                    <li>Power Plant Civil Works</li>
+                    <li>Commercial & Industrial Buildings</li>
+                </ul>
+            </div>
+
+            <!-- Foundation & Earthworks -->
+            <div class="service-card">
+                <h3>Foundation & Earthworks</h3>
+                <ul>
+                    <li>Deep Foundation Engineering</li>
+                    <li>Piling Works (Bored, Sheet, Load-bearing)</li>
+                    <li>Large-Scale Earthwork & Excavation</li>
+                    <li>Soil Grading & Site Levelling</li>
+                    <li>Land Preparation & Retaining Structures</li>
+                </ul>
+            </div>
+
+            <!-- Mechanical Engineering -->
+            <div class="service-card mechanical">
+                <h3>Mechanical Solutions</h3>
+                <ul>
+                    <li>Heavy Structural Steel Fabrication</li>
+                    <li>Plant Piping & Equipment Erection</li>
+                    <li>Industrial Machinery Installation</li>
+                    <li>Mechanical System Maintenance</li>
+                    <li>Site Operations & Turnkey Assemblies</li>
+                </ul>
+            </div>
+
+            <!-- Mining Operations -->
+            <div class="service-card mining">
+                <h3>Mining & Material Handling</h3>
+                <ul>
+                    <li>Overburden Removal & Excavation</li>
+                    <li>Mineral Extraction Support</li>
+                    <li>Haul Road Construction & Maintenance</li>
+                    <li>Heavy Mining Fleet Handling</li>
+                    <li>Material Transportation & Logistics</li>
+                </ul>
+            </div>
+
+            <!-- IT Services & Server Infrastructure -->
+            <div class="service-card it">
+                <h3>IT & Server Solutions</h3>
+                <ul>
+                    <li>Enterprise IT Infrastructure Setup</li>
+                    <li>Server Room & Data Center Erection</li>
+                    <li>Network Cabling & Architecture</li>
+                    <li>Enterprise Hardware Procurement</li>
+                    <li>Managed IT Support Services</li>
+                </ul>
+            </div>
+
+            <!-- Corporate Compliance -->
+            <div class="service-card compliance">
+                <h3>Corporate Compliance & Legal</h3>
+                <ul>
+                    <li>Company Statutory Compliance Management</li>
+                    <li>Regulatory & Environmental Clearances</li>
+                    <li>Labour Law & Safety Audits</li>
+                    <li>L1 Tender Support & Documentation</li>
+                    <li>Contractual & Legal Advisory</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer id="contact">
+        <h3>Maa Kamakhya Enterprises</h3>
+        <p>Civil | Mechanical | Mining | IT | Corporate Services</p>
+        <p>Contact Us: maakamakhyaenterprises.in@gmail.com </p>
+        <p><strong>WhatsApp:</strong> +91 70912 26421</p>
+        <p style="margin-top: 1.5rem; font-size: 0.875rem;">&copy; 2026 Maa Kamakhya Enterprises. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
